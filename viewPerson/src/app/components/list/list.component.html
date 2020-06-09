@@ -1,0 +1,43 @@
+<div class="color mat-elevation-z8" [@bounceOnEnter]>
+    <mat-form-field class="filter" color="accent">
+        <mat-label ><mat-icon>search</mat-icon> Busqueda</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Busca cualquier dato">
+    </mat-form-field>
+
+    <mat-table [dataSource]="tableSource" matSort>
+
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="lastName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Apellidos</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.lastName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="birthday">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Nacimiento</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.birthday |date:"mediumDate"}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="bu">
+            <mat-header-cell *matHeaderCellDef>Editar</mat-header-cell>
+            <mat-cell *matCellDef="let element"><button mat-flat-button [routerLink]="['/edit/', element.id]"><mat-icon>edit</mat-icon></button></mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="bd">
+            <mat-header-cell *matHeaderCellDef>Eliminar</mat-header-cell>
+            <mat-cell *matCellDef="let element"><button mat-flat-button (click)="delete(element.id)"><mat-icon color="warn">delete</mat-icon></button></mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="display; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: display;"></mat-row>
+
+    </mat-table>
+</div>

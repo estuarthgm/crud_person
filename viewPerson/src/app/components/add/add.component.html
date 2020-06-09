@@ -1,0 +1,147 @@
+<div class="color" [@bounceOnEnter]>
+
+    <div>
+        <h2>Ingrese una nueva persona</h2>
+        <mat-vertical-stepper linear #stepper>
+            <mat-step [stepControl]="idStep">
+                <form [formGroup]="idStep">
+                        <ng-template matStepLabel>Selecciona una identificacion</ng-template>
+
+                        <mat-form-field>
+                            <mat-label>ID</mat-label>
+                            <input (ngModelChange)="onKeyId($event)" (keyup)="onKeyId($event)" type="number" max="10000"  matInput placeholder="Por favor ingresa un ID" formControlName="id">
+                        </mat-form-field>
+
+                        <div>
+                            <button mat-button matStepperNext><mat-icon color="accent">arrow_forward</mat-icon></button>
+                        </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="nameStep">
+                <form [formGroup]="nameStep">
+                    <ng-template matStepLabel>Ingresa un nombre</ng-template>
+
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input matInput (ngModelChange)="onKeyName($event)" placeholder="Nombre" formControlName="name">
+                    </mat-form-field>
+
+                    <div>
+                        <button mat-button matStepperPrevious><mat-icon color="accent">arrow_back</mat-icon></button>
+                        <button mat-button matStepperNext><mat-icon color="accent">arrow_forward</mat-icon></button>
+                    </div>
+
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="lastNameStep">
+                <form [formGroup]="lastNameStep">
+                    <ng-template matStepLabel>Ingresa los apellidos</ng-template>
+
+                    <mat-form-field>
+                        <mat-label>Apellido</mat-label>
+                        <input matInput (ngModelChange)="onKeyLast($event)" placeholder="Apellido" formControlName="lastName">
+                    </mat-form-field>
+
+                    <div>
+                        <button mat-button matStepperPrevious><mat-icon color="accent">arrow_back</mat-icon></button>
+                        <button mat-button matStepperNext><mat-icon color="accent">arrow_forward</mat-icon></button>
+                    </div>
+
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="birthdayStep">
+                <form [formGroup]="birthdayStep">
+                    <ng-template matStepLabel>Selecciona una fecha de nacimiento</ng-template>
+
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento" formControlName="birthday" [min]="minDate" [max]="maxDate" date="dd/MM/yyyy" (ngModelChange)="onKeyBirthday($event)">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+                    </mat-form-field>
+
+                    <div>
+                        <button mat-button matStepperPrevious><mat-icon color="accent">arrow_back</mat-icon></button>
+                        <button mat-button matStepperNext><mat-icon color="accent">arrow_forward</mat-icon></button>
+                    </div>
+
+                </form>
+            </mat-step>
+            
+            <mat-step [stepControl]="personForm">
+                <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()">
+                    <ng-template matStepLabel>Revisa los datos</ng-template>
+                    
+                    <mat-form-field appearance="outline" class="_inputId">
+                        <mat-label>ID</mat-label>
+                        <input matInput formControlName="id">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="_input">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput formControlName="name">
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="outline" class="_input">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput formControlName="lastName">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="_input">
+                        <mat-label>Fecha de nacimiento</mat-label>
+                        <input matInput formControlName="birthday">
+                    </mat-form-field>
+
+                    <div>
+                        <button mat-button matStepperPrevious><mat-icon color="accent">arrow_back</mat-icon></button>
+                        <button mat-button (click)="stepper.reset()"><mat-icon>restore</mat-icon></button>
+                        <button type="submit" mat-button color="accent"><mat-icon>save</mat-icon> Guardar</button>
+                    </div>
+
+                </form>
+                    
+            </mat-step>
+
+        </mat-vertical-stepper> 
+    </div>
+
+
+        <!--<form [formGroup]="personForm" (ngSubmit)="onFormSubmit()">
+            <mat-card-title>
+                Agregar Persona
+            </mat-card-title>
+            
+            <mat-form-field>
+                <mat-label>ID</mat-label>
+                <input (keyup)="onKey($event)" type="number" min="1" max="10000"  matInput placeholder="Por favor ingresa un ID" formControlName="id">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Apellido</mat-label>
+                <input matInput placeholder="Apellido" formControlName="lastName">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Fecha de nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthday" [min]="minDate" [max]="maxDate" date="dd/MM/yyyy">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+            </mat-form-field>
+
+            <div>
+                <button type="submit" mat-button color="accent"><mat-icon>save</mat-icon></button>
+            </div>
+        </form>-->
+
+        <div>
+            <button class="btnClose" [routerLink]="['/list']" mat-button color="warn"><mat-icon>close</mat-icon></button>
+        </div>
+
+</div>

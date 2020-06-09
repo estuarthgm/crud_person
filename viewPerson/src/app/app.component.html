@@ -1,0 +1,7 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-button  [routerLink]="['/welcome']"><mat-icon>home</mat-icon></button>
+    <button mat-button [routerLink]="['/add']" class="btn">Agregar</button>
+    <button mat-button [routerLink]="['/list']" class="btn">Lista</button>
+</mat-toolbar>
+<app-loader></app-loader>
+<router-outlet></router-outlet>

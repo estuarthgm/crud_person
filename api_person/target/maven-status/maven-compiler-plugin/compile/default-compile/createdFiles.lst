@@ -1,0 +1,6 @@
+com/bytesw/crud/bs/service/impl/CrudServiceImpl.class
+com/bytesw/crud/bs/dao/PersonRepository.class
+com/bytesw/crud/Application.class
+com/bytesw/crud/bs/service/CrudService.class
+com/bytesw/crud/eis/bo/Person.class
+com/bytesw/crud/bs/controller/CrudController.class

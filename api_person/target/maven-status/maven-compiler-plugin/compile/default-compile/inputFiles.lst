@@ -1,0 +1,6 @@
+/home/estuarth/Web Developer/proyectos completos/crud_persona/api_person/src/main/java/com/bytesw/crud/bs/controller/CrudController.java
+/home/estuarth/Web Developer/proyectos completos/crud_persona/api_person/src/main/java/com/bytesw/crud/bs/dao/PersonRepository.java
+/home/estuarth/Web Developer/proyectos completos/crud_persona/api_person/src/main/java/com/bytesw/crud/eis/bo/Person.java
+/home/estuarth/Web Developer/proyectos completos/crud_persona/api_person/src/main/java/com/bytesw/crud/bs/service/CrudService.java
+/home/estuarth/Web Developer/proyectos completos/crud_persona/api_person/src/main/java/com/bytesw/crud/Application.java
+/home/estuarth/Web Developer/proyectos completos/crud_persona/api_person/src/main/java/com/bytesw/crud/bs/service/impl/CrudServiceImpl.java

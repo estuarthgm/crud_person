@@ -1,0 +1,24 @@
+.color{
+    background-color: #343030;
+    width: 100%;
+    height: 93.48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+
+._input{
+    margin-left: 10px;
+}
+
+._inputId{
+    width: 80px;
+}
+
+.btnClose{
+    margin-left: 10px;
+}
+h2{
+    font-size: 25px;
+}

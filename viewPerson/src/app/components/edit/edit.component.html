@@ -1,0 +1,27 @@
+<div class="color" [@bounceOnEnter] >
+    <mat-card>
+    <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()" >
+        
+        <mat-card-title>
+            Editar Persona identificada con el id: {{id}}
+        </mat-card-title>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Cambia el nombre" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input matInput placeholder="Cambia el apellido" formControlName="lastName">
+        </mat-form-field>
+
+        <div>
+            <button type="submit" mat-button color="accent"><mat-icon>save</mat-icon></button>
+        </div>
+    </form>
+    </mat-card>
+    <div>
+        <button class="btnClose" [routerLink]="['/list']" mat-button color="warn"><mat-icon>close</mat-icon></button>
+    </div>
+</div>

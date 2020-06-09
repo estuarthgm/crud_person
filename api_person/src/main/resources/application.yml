@@ -1,0 +1,10 @@
+server:
+  port: 8082
+spring:
+  jpa:
+    database: hsql
+    generate-ddl: true
+  datasource:
+    url: jdbc:hsqldb:mem://172.16.10.383/test
+    username: SA
+    password:
